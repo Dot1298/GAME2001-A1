@@ -40,12 +40,11 @@ int main()
 	array.push(23); // Should expand here
 	array.push(82); // Should expand here
 	// 3, 23, 53, 82, 83
-	array[2] = 112; // causes issues with ordered array as this changed value won't be ordered
-	// 3, 23, 112, 82, 83
-	array.pop();
-	// 3, 23, 112, 82
-	array.remove(2);
-	// 3, 23, 82
+	
+	//Attempted to add duplicate entries
+	array.push(23);
+	array.push(53);
+
 	cout << "Ordered array contents: ";
 
 	for (int i = 0; i < array.GetSize(); i++)

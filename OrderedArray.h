@@ -11,6 +11,11 @@ public:
     void push(T val) override {
         assert(this->m_array != nullptr);
 
+        //Duplicate check******************************************
+        if (this->search(val) != -1) {
+            return; 
+        }
+
         if (this->m_numElements >= this->m_maxSize) {
             this->Expand();
         }
