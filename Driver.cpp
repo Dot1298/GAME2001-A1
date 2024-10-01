@@ -32,13 +32,21 @@ int main()
 
 	///////////////////////////////////////////////////////////
 
-	OrderedArray<int> array(3);
+	OrderedArray<int> array(1);
 
 	array.push(3);
 	array.push(53);
 	array.push(83);
 	array.push(23); // Should expand here
 	array.push(82); // Should expand here
+	array.push(86); // Should expand here
+	array.push(81); // Should expand here
+	array.push(48); // Should expand here
+	array.push(41); // Should expand here
+	array.push(42); // Should expand here
+	array.push(43); // Should expand here
+	array.push(44); // Should expand here
+	array.push(45); // Should expand here
 	// 3, 23, 53, 82, 83
 	
 	//Attempted to add duplicate entries
@@ -59,4 +67,6 @@ int main()
 	cout << array.search(53) << endl; // -1
 	cout << "Search for 23 was found at index: ";
 	cout << array.search(23) << endl; // 1
+
+	return 0;
 }

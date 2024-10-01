@@ -122,13 +122,20 @@ protected:
     // Private functions
     // Expansion
     bool Expand() {
-        if (m_growSize <= 0) {
-            // LEAVE!
-            return false;
+        //if (m_growSize <= 0) {
+        //    // LEAVE!
+        //    return false;
+        //}
+
+        if (m_maxSize == 0) {
+            m_maxSize = 2; 
+        }
+        else {
+            m_maxSize *= 2; 
         }
 
         // Create the new array
-        T* temp = new T[m_maxSize + m_growSize];
+        T* temp = new T[m_maxSize];
         assert(temp != nullptr);
 
         // Copy the contents of original array into the new array
@@ -139,7 +146,8 @@ protected:
 
         // Clean up variable assignments
         m_array = temp;
-        m_maxSize += m_growSize;
+
+        std::cout << "Array expanded: new size = " << m_maxSize << std::endl;
 
         return true;
     }
